@@ -1,0 +1,27 @@
+{
+  "name": "vue-typescript-template",
+  "version": "1.0.0",
+  "description": "vue typescript template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cqwanli/vue-typescript-template.git"
+  },
+  "keywords": [
+    "typescript",
+    "koa",
+    "vue"
+  ],
+  "author": "wanli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cqwanli/vue-typescript-template/issues"
+  },
+  "homepage": "https://github.com/cqwanli/vue-typescript-template#readme",
+  "dependencies": {
+    "koa": "^2.5.1"
+  }
+}
