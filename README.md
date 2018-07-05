@@ -9,3 +9,54 @@
 
 - 安装模块koa,`npm install koa`。
 
+### typescript配置
+
+- 
+
+### webpack配置
+
+- 安装模块`npm install -D webpack webpack-cli webpack-command webpack-merge html-webpack-plugin webpack-dev-server`
+
+  - `webpack`:webpack工具包，通常情况下需要全局安装webpack。
+  - `webpack-cli`
+  - `webpack-command`
+  - `webpack-merge`：用于合并webpack配置。
+  - `html-webpack-plugin`:用于打包html模板文件。
+  - `webpack-dev-server`:用于启动一个临时的web服务，方便开发调试。
+
+- webpack输入输出基本配置。创建文件`config/webpack.base.config.js`,添加以下配置。
+
+  ```javascript
+  const path = require('path');
+  module.exports = {
+      entry: './src/main.js',
+      output: {
+          path: path.resolve(__dirname, '../dist'),
+          filename: 'bundle.js'
+      }
+  };
+  ```
+
+- 添加`html-webpack-plugin`组件，打包html模板。在文件`config/webpack.base.config.js`中添加以下配置。
+
+  ```javascript
+  const path = require('path');
+  const HtmlWebpackPlugin = require('html-webpack-plugin');
+  module.exports = {
+  	...
+      plugins: [new HtmlWebpackPlugin({
+          title: 'Custom template',
+          filename: 'index.html',
+          template: path.resolve(__dirname, '../src/assets/index.html')
+      })]
+      ...
+  };
+  ```
+
+  创建`/src/assets/index.html`文件，文件中绑定字段需要使用`ejs`语法绑定字段，例如标题绑定为`<%= htmlWebpackPlugin.options.title %>`。
+
+
+
+### vue配置
+
+- 安装包`npm  i -D vue`
