@@ -55,6 +55,36 @@
 
   创建`/src/assets/index.html`文件，文件中绑定字段需要使用`ejs`语法绑定字段，例如标题绑定为`<%= htmlWebpackPlugin.options.title %>`。
 
+- webpack开发环境配置
+
+  - 添加`webpack-dev-server`配置，创建文件`config/webpack.dev.config.js`。添加开发模式配置。
+
+    ```javascript
+    const merge = require('webpack-merge');
+    const path = require('path');
+    const baseConfig = require('./webpack.base.config');
+    module.exports = merge(baseConfig, {
+        devServer: {
+            contentBase: path.join(__dirname, '../dist'),
+            port: 8000
+        }
+    })
+    ```
+
+  - 在开发模式给项目添加`source-map`方便调试。
+
+    ```javascript
+    module.exports = merge(baseConfig, {
+        ...
+        devtool: "cheap-source-map"
+        ...
+    })
+    ```
+
+    
+
+  
+
 
 
 ### vue配置
