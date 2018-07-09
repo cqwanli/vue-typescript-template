@@ -7,5 +7,10 @@ module.exports = merge(baseConfig, {
         compress: true,
         port: 8000
     },
-    devtool: "cheap-source-map"
+    devtool: "cheap-source-map",
+    resolve: {
+        alias: {
+          vue: 'vue/dist/vue.js'
+        }
+      }
 })
